@@ -1,0 +1,12 @@
+<h1>{{ polle.name }}</h1>
+<ul>
+
+{% for party in polle.party_set.all %}
+    <li>{{ party.name }}</li>
+    <a href="{%url 'polls:vote' party.id%}"> vote </a>
+{% endfor %}
+{% for l in leader %}
+    <li>{{l.name}} -- {{l.votes}}</li>
+
+{%endfor%}
+</ul>
